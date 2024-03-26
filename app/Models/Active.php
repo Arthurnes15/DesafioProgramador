@@ -6,7 +6,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Active extends Model
-{
+{   
+  
+    protected $fillable = [
+        'active_name',
+        'active_dscp',
+        'active_ctgr',
+        'active_date',
+        'active_value',
+        'active_local'
+    ];
     use HasFactory;
 
     //Define que todos os dados enviados pelo post podem ser atualizados sem restrições:

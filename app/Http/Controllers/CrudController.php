@@ -77,15 +77,30 @@ class CrudController extends Controller
     }
     //Action da rota que atualiza os registros dos bancos e redireciona para a página de verificação dos ativos
     public function update(Request $request) {
-        $data = [
+        $localData = [
+            'active_street' => $request->street,
+            'active_street_number' => $request->street_number,
+            'active_city' => $request->city,
+            'active_state' => $request->state,
+            'active_country' => $request->country,
+        ];
+        Local::findOrFail($request->local_id)->update($localData);
+
+        $personData = [
+            'person_name' => $request->name_person,
+            'person_type' => $request->type_person
+        ];
+        Person::findOrFail($request->person_id)->update($personData);
+        $activeData = [
             'active_name' => $request->name,
-            'active_dscp' => $request->description,
+            'active_dscp'=> $request->description,
             'active_ctgr' => $request->category,
             'active_date' => $request->date,
             'active_value' => $request->value,
-            'active_local' => $request->type
+            'active_local' => $request->type,
         ];
-        Active::findOrFail($request->id)->update($data);
+
+        Active::findOrFail($request->id)->update($activeData);
         return redirect('/');
     }
 }

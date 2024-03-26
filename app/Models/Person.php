@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Person extends Model
 {
     protected $table = 'person';
+    protected $fillable = [
+        'person_name',
+        'person_type'
+    ];
     use HasFactory;
 
     // Define que uma pessoa pode ter muitos ativos:
