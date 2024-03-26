@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../fonts/Montserrat-VariableFont_wght.ttf);
+}
+*{
+    font-family: 'Montserrat';
+}
+.container-form {
+    display: flex;
+    justify-content: center;
+    font-family: 'Montserrat';
+}
+
+h1, h2{
+    text-align: center;
+}
+
+.container-form__content-form{
+    padding: 30px;
+    margin-top: 35px;
+    border-radius: 8px;
+}
+
+.container-form__content-form:hover{
+    box-shadow: 0px 3px 20px rgb(240, 51, 51);
+    transition: 0.9s;
+}
+
+#select-type{
+    width: 250px;
+    margin-left: 12px;
+}
+
+.btn.btn-danger {
+    width: 237px;
+    margin-left: 12px;
+}
+
+.container-form__content-form input, .container-form__content-form select, .container-form__content-form button {
+    width: 500px;
+    margin-bottom: 8px;
+}
+
+.button-delete{
+    border: none;
+    background-color: transparent;
+}
+
+table{
+    margin-top: 60px;
+    padding: 20px;
+}
+
